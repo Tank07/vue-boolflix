@@ -1,28 +1,63 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <HeaderSearch @funzioneRicerca="metodoSearch"/>
+
+    <MainTut :propsArrayFilms="films"/>
+    
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import "bootstrap"
+import axios from 'axios';
+
+import MainTut from './components/MainTut.vue'
+import HeaderSearch from './components/HeaderSearch.vue'
+// import DischiList from './components/DischiList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+     HeaderSearch,
+     MainTut
+    // DischiList
+  },
+   data(){
+      return{
+        testoRicerca: "",
+        films:[],
+        series:[]
+          
+    }
+  }, 
+  // axios.get("https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&query=${filmcercato}")
+  //           .then( (res) => {
+  //             console.log(res.data.results);
+  //             this.series = res.data.results
+  //           }
+  //            )
+  // },
+  methods: {
+    metodoSearch( filmcercato ){
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=${filmcercato}`)
+            .then( (res) => {
+              console.log(res.data.results);
+              this.films = res.data.results
+          }
+            )
+    }
+    
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+  @import "bootstrap/dist/css/bootstrap.min.css";
+
+  
+
 </style>
