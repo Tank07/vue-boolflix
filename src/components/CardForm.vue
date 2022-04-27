@@ -4,9 +4,9 @@
       <img :src="`https://image.tmdb.org/t/p/w342//${film.poster_path}`" alt="">
       <h3 class="my-3">{{film.title}}</h3>
       <h4 class="my-3">{{film.original_title}}</h4>
-      <!-- <span class="fw-bolder my-3">{{film.original_language}}</span> -->
       <h5>{{film.vote_average}}</h5>
       <span class="flag"  :class="(film.original_language == 'it') ? 'flag-it' : (film.original_language == 'en') ? 'flag-en' : 'flag-boh'"></span>
+      <p><i class="fa-star" v-for="i in 5" :key="i" :class="(i <= stars()) ? 'fa-solid' : 'fa-regular'" ></i></p>
   </div>
 </template>
 
@@ -16,12 +16,19 @@ export default {
   name: 'CardForm',
   props: {
     film: Object
+  },
+
+  methods: {
+    stars(){
+      let roundedRating = Math.ceil(this.film.vote_average)/2
+      return roundedRating
+    }
   }
 }
 </script>
 
 
-<style scoped >
+<style >
 
 .flag{
   display: inline-block;
