@@ -6,7 +6,7 @@
       <h4 class="my-3">{{film.original_title}}</h4>
       <span class="fw-bolder my-3">{{film.original_language}}</span>
       <h5>{{film.vote_average}}</h5>
-      <!-- <span class="flag"  :class="(film.original_language == `it`) ? `flag-it` : (film.original_language = `en`) ? `flag-en` : `flag-boh`"></span> -->
+      <!-- <span class="flag"  :class="(film.original_language == `it`) ? `flag-it` : (film.original_language = `en`) ? `flag-en` : `flag-boh`"></span>  -->
   </div>
 </template>
 
@@ -20,7 +20,25 @@ export default {
 }
 </script>
 
+
 <style scoped >
+
+.flag{
+  height: 25px;
+  width: 25px;
+}
+
+.flag-it{
+  background-image: url("../assets/icons8-italia-48.png");
+}
+
+.flag-en{
+  background-image: url("../assets/icons8-gran-bretagna-48.png");
+}
+
+.flag-it{
+  background-image: url("../assets/icons8-italia-48.png");
+}
 
  
 </style>
