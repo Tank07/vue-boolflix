@@ -1,7 +1,7 @@
 <template>
-  <div class="col-3 text-center my-5">
+  <div class="col-3 text-center my-3">
    
-      <img :src="`https://image.tmdb.org/t/p/w342//${film.poster_path}`" alt="">
+      <img :src="`https://image.tmdb.org/t/p/w185//${film.poster_path}`" alt="">
       <h3 class="my-3">{{film.title}}</h3>
       <h4 class="my-3">{{film.original_title}}</h4>
       <h5>{{film.vote_average}}</h5>

@@ -1,6 +1,6 @@
 <template>
 
-<div>
+<div class="bg_blacky">
   <div class="row" >
     
     <FilmList :propsArrayFilms2="propsArrayFilms" :propsArraySerie2="propsArraySerie"  />
@@ -32,5 +32,9 @@ export default {
 </script>
 
 <style scoped >
+
+.bg_blacky{
+  background-color: #141414;
+}
 
 </style>
