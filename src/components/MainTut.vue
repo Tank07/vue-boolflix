@@ -3,7 +3,7 @@
 <div>
   <div class="row" >
     
-    <FilmList :propsArrayFilms2="propsArrayFilms"    />
+    <FilmList :propsArrayFilms2="propsArrayFilms" :propsArraySerie2="propsArraySerie"  />
 
   </div>
 
@@ -23,7 +23,8 @@ export default {
     FilmList
   },
   props:{
-      propsArrayFilms: Array
+      propsArrayFilms: Array,
+      propsArraySerie: Array
       
     }
 }
