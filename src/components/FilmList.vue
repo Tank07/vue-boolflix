@@ -11,6 +11,16 @@
 
   </div>
 
+  <div class="row">
+
+    <CardSerie
+      v-for="( element, index ) in propsArraySerie2"
+      :key="index"
+      :serie="element"
+    />
+
+  </div>
+
 </div>
 
 
@@ -19,15 +29,18 @@
 <script>
 
 import CardForm from './CardForm.vue'
+import CardSerie from './CardSerie.vue'
 
 export default {
   
   name: 'FilmList',
   components: {
-    CardForm
+    CardForm,
+    CardSerie
   },
   props:{
-      propsArrayFilms2: Array
+      propsArrayFilms2: Array,
+      propsArraySerie2: Array
       
     }
 }
